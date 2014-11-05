@@ -1,0 +1,22 @@
+{
+  "name": "bonejs",
+  "version": "1.0.0",
+  "description": "bonejs ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Secbone/bonejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Secbone/bonejs/issues"
+  },
+  "homepage": "https://github.com/Secbone/bonejs",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
