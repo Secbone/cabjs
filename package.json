@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Secbone/bonejs",
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0"
   }
 }
