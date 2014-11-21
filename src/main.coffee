@@ -1,4 +1,1 @@
-Bonejs = Bonejs || {};
-
 class Bonejs
-    
