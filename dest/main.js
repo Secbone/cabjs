@@ -55,6 +55,8 @@
       return (_ref = this._painter).fillRect.apply(_ref, rectArray);
     };
 
+    window.B = Bonejs;
+
     return Bonejs;
 
   })();

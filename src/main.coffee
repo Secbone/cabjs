@@ -29,3 +29,5 @@ class Bonejs
     fillRect: (rectArray, color) ->
         @_painter.fillStyle = color
         @_painter.fillRect rectArray...
+
+    window.B = Bonejs
