@@ -1,5 +1,5 @@
 (function() {
-  var Bonejs,
+  var Bonejs, Obj,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Bonejs = (function() {
@@ -55,9 +55,26 @@
       return (_ref = this._painter).fillRect.apply(_ref, rectArray);
     };
 
+    return Bonejs;
+
+  })();
+
+  Obj = (function() {
+    Obj.prototype.properties = {
+      display: 'block',
+      height: 'auto',
+      width: 'auto'
+    };
+
+    function Obj(options) {
+      this._setProperties();
+    }
+
+    Obj.prototype._setProperties = function() {};
+
     window.B = Bonejs;
 
-    return Bonejs;
+    return Obj;
 
   })();
 

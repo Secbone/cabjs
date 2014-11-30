@@ -30,4 +30,15 @@ class Bonejs
         @_painter.fillStyle = color
         @_painter.fillRect rectArray...
 
+class Obj
+    properties:
+        display: 'block'
+        height: 'auto'
+        width: 'auto'
+    constructor: (options) ->
+        @_setProperties()
+    _setProperties: ->
+        
+
+
     window.B = Bonejs
