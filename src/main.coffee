@@ -18,10 +18,8 @@ class Bonejs
         @_height = height
         canvasHeight = if height>1 then height else @_canvas.parentNode.offsetHeight*height
         @_canvas.style.height = "#{canvasHeight}px"
-    getWidth: ->
-        @_canvas.offsetWidth
-    getHeight: ->
-        @_canvas.offsetHeight
+    getWidth: -> @_canvas.offsetWidth
+    getHeight: -> @_canvas.offsetHeight
     _autoResize: =>
         @setSize [@_width, @_height]
     _bindEvent: ->
@@ -32,13 +30,15 @@ class Bonejs
 
 class Obj
     properties:
-        display: 'block'
         height: 'auto'
         width: 'auto'
     constructor: (options) ->
+        @options = options
         @_setProperties()
     _setProperties: ->
-        
+        for property, value in @options
+            console.log property
+
 
 
     window.B = Bonejs

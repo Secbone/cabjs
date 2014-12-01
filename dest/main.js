@@ -61,16 +61,25 @@
 
   Obj = (function() {
     Obj.prototype.properties = {
-      display: 'block',
       height: 'auto',
       width: 'auto'
     };
 
     function Obj(options) {
+      this.options = options;
       this._setProperties();
     }
 
-    Obj.prototype._setProperties = function() {};
+    Obj.prototype._setProperties = function() {
+      var property, value, _i, _len, _ref, _results;
+      _ref = this.options;
+      _results = [];
+      for (value = _i = 0, _len = _ref.length; _i < _len; value = ++_i) {
+        property = _ref[value];
+        _results.push(console.log(property));
+      }
+      return _results;
+    };
 
     window.B = Bonejs;
 
