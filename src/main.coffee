@@ -7,6 +7,9 @@ class Bonejs
         @_painter = @_canvas.getContext '2d'
         @setSize size
         @_bindEvent()
+    getWebgl: ->
+        @_gl = null
+        @_gl = @_canvas.getContext 'webgl'
     setSize: (size) ->
         @setWidth size[0]
         @setHeight size[1]
