@@ -14,6 +14,11 @@
       this._bindEvent();
     }
 
+    Bonejs.prototype.getWebgl = function() {
+      this._gl = null;
+      return this._gl = this._canvas.getContext('webgl');
+    };
+
     Bonejs.prototype.setSize = function(size) {
       this.setWidth(size[0]);
       return this.setHeight(size[1]);
