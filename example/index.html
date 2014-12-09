@@ -2,7 +2,23 @@
 <html>
 <head></head>
 <body>
-    <canvas id="mycanvas"></canvas>
+    <canvas id="mycanvas" width="1100" height="500"></canvas>
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+        void main(void){
+            gl_FragColor = vec4(1,1,1,1);
+        }
+    </script>
+    <script id="shader-vs" type="x-shader/x-vertex">
+        attribute vec3 aVertexPosition;
+        uniform mat4 uMVMatrix;
+        uniform mat4 uPMatrix;
+
+        void main(void){
+            gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1);
+        }
+    </script>
+
     <script src="js/index.js"></script>
 </body>
 </html>
