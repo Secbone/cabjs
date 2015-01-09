@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="js/glUtils.js"></script>
+    <!--<script src="js/glUtils.js"></script>-->
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <canvas id="mycanvas" width="1100" height="500"></canvas>
+    <canvas id="mycanvas"></canvas>
 
-    <script id="shader-fs" type="x-shader/x-fragment">
+    <!--<script id="shader-fs" type="x-shader/x-fragment">
         void main(void){
             gl_FragColor = vec4(1,1,1,1);
         }
@@ -22,5 +23,11 @@
     </script>
 
     <script src="js/index.js"></script>
+    -->
+    <script src="../dest/main.js"></script>
+    <script>
+        var b = new $bone("#mycanvas");
+        b.fillRect([0,0,100,100], "#000");
+    </script>
 </body>
 </html>

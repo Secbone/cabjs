@@ -16,11 +16,11 @@ class Bonejs
     setWidth: (width) ->
         @_width = width
         canvasWidth = if width>1 then width else @_canvas.parentNode.offsetWidth*width
-        @_canvas.style.width = "#{canvasWidth}px"
+        @_canvas.setAttribute "width", canvasWidth
     setHeight: (height) ->
         @_height = height
         canvasHeight = if height>1 then height else @_canvas.parentNode.offsetHeight*height
-        @_canvas.style.height = "#{canvasHeight}px"
+        @_canvas.setAttribute "height", canvasHeight
     getWidth: -> @_canvas.offsetWidth
     getHeight: -> @_canvas.offsetHeight
     _autoResize: =>
@@ -41,7 +41,8 @@ class Obj
     _setProperties: ->
         for property, value in @options
             console.log property
+    keyframe: ->
 
 
 
-    window.B = Bonejs
+    window.$bone = Bonejs

@@ -28,14 +28,14 @@
       var canvasWidth;
       this._width = width;
       canvasWidth = width > 1 ? width : this._canvas.parentNode.offsetWidth * width;
-      return this._canvas.style.width = "" + canvasWidth + "px";
+      return this._canvas.setAttribute("width", canvasWidth);
     };
 
     Bonejs.prototype.setHeight = function(height) {
       var canvasHeight;
       this._height = height;
       canvasHeight = height > 1 ? height : this._canvas.parentNode.offsetHeight * height;
-      return this._canvas.style.height = "" + canvasHeight + "px";
+      return this._canvas.setAttribute("height", canvasHeight);
     };
 
     Bonejs.prototype.getWidth = function() {
@@ -86,7 +86,9 @@
       return _results;
     };
 
-    window.B = Bonejs;
+    Obj.prototype.keyframe = function() {};
+
+    window.$bone = Bonejs;
 
     return Obj;
 
