@@ -4,7 +4,10 @@
 
   Bonejs = (function() {
     function Bonejs(selector, size) {
+      this.runKeyframes = __bind(this.runKeyframes, this);
       this._autoResize = __bind(this._autoResize, this);
+      this.children = [];
+      this.Object = new Obj();
       selector = selector || 'canvas';
       size = size || [1, 1];
       this._canvas = document.querySelector(selector);
@@ -17,6 +20,15 @@
     Bonejs.prototype.getWebgl = function() {
       this._gl = null;
       return this._gl = this._canvas.getContext('webgl');
+    };
+
+    Bonejs.prototype.start = function() {
+      return requestAnimationFrame(this.runKeyframes);
+    };
+
+    Bonejs.prototype.setBackground = function(color) {
+      this._background = color;
+      return this._clear();
     };
 
     Bonejs.prototype.setSize = function(size) {
@@ -54,10 +66,30 @@
       return window.addEventListener('resize', this._autoResize);
     };
 
+    Bonejs.prototype._clear = function() {
+      return this.fillRect([0, 0, this.getWidth(), this.getHeight()], this._background);
+    };
+
     Bonejs.prototype.fillRect = function(rectArray, color) {
       var _ref;
       this._painter.fillStyle = color;
       return (_ref = this._painter).fillRect.apply(_ref, rectArray);
+    };
+
+    Bonejs.prototype.append = function(obj) {
+      return this.children.push(obj);
+    };
+
+    Bonejs.prototype.runKeyframes = function() {
+      var child, _i, _len, _ref, _results;
+      _ref = this.children;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        child = _ref[_i];
+        console.log(child);
+        _results.push(child.keyframe());
+      }
+      return _results;
     };
 
     return Bonejs;
@@ -70,10 +102,7 @@
       width: 'auto'
     };
 
-    function Obj(options) {
-      this.options = options;
-      this._setProperties();
-    }
+    function Obj(options) {}
 
     Obj.prototype._setProperties = function() {
       var property, value, _i, _len, _ref, _results;
@@ -86,12 +115,21 @@
       return _results;
     };
 
-    Obj.prototype.keyframe = function() {};
+    Obj.prototype.extend = function(options) {
+      var key, value, _i, _len;
+      for (key = _i = 0, _len = options.length; _i < _len; key = ++_i) {
+        value = options[key];
+        this[key] = value;
+      }
+      return this;
+    };
 
-    window.$bone = Bonejs;
+    Obj.prototype.keyframe = function() {};
 
     return Obj;
 
   })();
+
+  window.$bone = Bonejs;
 
 }).call(this);

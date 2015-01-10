@@ -27,7 +27,18 @@
     <script src="../dest/main.js"></script>
     <script>
         var b = new $bone("#mycanvas");
-        b.fillRect([0,0,100,100], "#000");
+        b.setBackground("#000");
+
+        var obj = b.Object.extend({
+            keyframe: function(){
+                console.log(Math.random());
+            }
+        });
+
+        b.append(obj);
+
+        b.start();
+
     </script>
 </body>
 </html>
