@@ -7,7 +7,6 @@
       this.runKeyframes = __bind(this.runKeyframes, this);
       this._autoResize = __bind(this._autoResize, this);
       this.children = [];
-      this.Object = new Obj();
       selector = selector || 'canvas';
       size = size || [1, 1];
       this._canvas = document.querySelector(selector);
@@ -96,7 +95,7 @@
 
   })();
 
-  Obj = (function() {
+  Bonejs.Object = Obj = (function() {
     Obj.prototype.properties = {
       height: 'auto',
       width: 'auto'

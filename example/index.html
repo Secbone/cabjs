@@ -29,7 +29,9 @@
         var b = new $bone("#mycanvas");
         b.setBackground("#000");
 
-        var obj = b.Object.extend({
+        console.log($bone.Object.extend);
+
+        var obj = $bone.Object.extend({
             keyframe: function(){
                 console.log(Math.random());
             }

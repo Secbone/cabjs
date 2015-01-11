@@ -4,8 +4,6 @@ class Bonejs
     constructor: (selector, size) ->
         @children = []
 
-        @Object = new Obj()
-
         selector = selector || 'canvas'
         size = size || [1, 1]
         @_canvas = document.querySelector selector
@@ -52,7 +50,7 @@ class Bonejs
             child.keyframe()
 
 
-class Obj
+Bonejs.Object = class Obj
     properties:
         height: 'auto'
         width: 'auto'
