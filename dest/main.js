@@ -1,5 +1,5 @@
 (function() {
-  var Bonejs, Obj,
+  var Bonejs, Obj, extend,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Bonejs = (function() {
@@ -101,7 +101,9 @@
       width: 'auto'
     };
 
-    function Obj(options) {}
+    function Obj(options) {
+      this;
+    }
 
     Obj.prototype._setProperties = function() {
       var property, value, _i, _len, _ref, _results;
@@ -128,6 +130,13 @@
     return Obj;
 
   })();
+
+  extend = function(options) {
+    console.log(this.property);
+    return this;
+  };
+
+  Obj.extend = extend;
 
   window.$bone = Bonejs;
 
