@@ -1,5 +1,5 @@
 (function() {
-  var Bonejs, Obj, extend,
+  var Bonejs, Obj,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Bonejs = (function() {
@@ -96,25 +96,9 @@
   })();
 
   Bonejs.Object = Obj = (function() {
-    Obj.prototype.properties = {
-      height: 'auto',
-      width: 'auto'
-    };
-
     function Obj(options) {
-      this;
+      this.extend(options);
     }
-
-    Obj.prototype._setProperties = function() {
-      var property, value, _i, _len, _ref, _results;
-      _ref = this.options;
-      _results = [];
-      for (value = _i = 0, _len = _ref.length; _i < _len; value = ++_i) {
-        property = _ref[value];
-        _results.push(console.log(property));
-      }
-      return _results;
-    };
 
     Obj.prototype.extend = function(options) {
       var key, value, _i, _len;
@@ -122,7 +106,7 @@
         value = options[key];
         this[key] = value;
       }
-      return this;
+      return console.log(this);
     };
 
     Obj.prototype.keyframe = function() {};
@@ -130,13 +114,6 @@
     return Obj;
 
   })();
-
-  extend = function(options) {
-    console.log(this.property);
-    return this;
-  };
-
-  Obj.extend = extend;
 
   window.$bone = Bonejs;
 

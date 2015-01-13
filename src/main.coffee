@@ -51,28 +51,16 @@ class Bonejs
 
 
 Bonejs.Object = class Obj
-    properties:
-        height: 'auto'
-        width: 'auto'
-    constructor: (options) -> @
-        #@options = options
-        #@_setProperties()
-    _setProperties: ->
-        for property, value in @options
-            console.log property
-    extend: (options)->
+    constructor: (options) ->
+        @extend options
+        #Bonejs.append @
+    extend: (options) ->
         for value, key in options
             @[key] = value
-        @
+        console.log @
     keyframe: ->
 
 
-extend = (options)->
-    console.log @property
-    #surrogate =
-    @
-
-Obj.extend = extend
 
 
 window.$bone = Bonejs
