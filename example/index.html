@@ -29,13 +29,15 @@
         var b = new $bone("#mycanvas");
         b.setBackground("#000");
 
-        console.log($bone.Object.extend);
+        //console.log($bone.Object.extend);
 
-        var obj = new $bone.Object({
+        var obj = new $bone.Object.extend({
             keyframe: function(){
                 console.log(Math.random());
             }
         });
+
+        console.log(obj.keyframe);
 
         b.append(obj);
 

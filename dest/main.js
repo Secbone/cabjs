@@ -85,8 +85,8 @@
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         child = _ref[_i];
-        console.log(child);
-        _results.push(child.keyframe());
+        child.keyframe();
+        _results.push(requestAnimationFrame(this.runKeyframes));
       }
       return _results;
     };
@@ -95,18 +95,19 @@
 
   })();
 
-  Bonejs.Object = Obj = (function() {
+  Obj = (function() {
     function Obj(options) {
-      this.extend(options);
+      this.extend = __bind(this.extend, this);
+      this;
     }
 
     Obj.prototype.extend = function(options) {
-      var key, value, _i, _len;
-      for (key = _i = 0, _len = options.length; _i < _len; key = ++_i) {
+      var key, value;
+      for (key in options) {
         value = options[key];
         this[key] = value;
       }
-      return console.log(this);
+      return this;
     };
 
     Obj.prototype.keyframe = function() {};
@@ -114,6 +115,8 @@
     return Obj;
 
   })();
+
+  Bonejs.Object = new Obj();
 
   window.$bone = Bonejs;
 

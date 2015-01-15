@@ -45,20 +45,23 @@ class Bonejs
         @children.push obj
     runKeyframes: =>
         for child in @children
-            console.log child
+            #console.log child
             #keyframe.call child
             child.keyframe()
+            requestAnimationFrame @runKeyframes
 
 
-Bonejs.Object = class Obj
-    constructor: (options) ->
-        @extend options
+class Obj
+    constructor: (options) -> @
+        #@extend options
         #Bonejs.append @
-    extend: (options) ->
-        for value, key in options
+    extend: (options) =>
+        for key, value of options
             @[key] = value
-        console.log @
+        @
     keyframe: ->
+
+Bonejs.Object = new Obj()
 
 
 
