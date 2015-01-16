@@ -44,6 +44,7 @@ class Bonejs
     append: (obj)->
         @children.push obj
     runKeyframes: =>
+        @_clear()
         for child in @children
             #console.log child
             #keyframe.call child
