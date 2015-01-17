@@ -1,6 +1,8 @@
 (function() {
-  var Bonejs, Obj,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  var Bonejs, Obj, extend,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   Bonejs = (function() {
     function Bonejs(selector, size) {
@@ -69,6 +71,8 @@
       return this.fillRect([0, 0, this.getWidth(), this.getHeight()], this._background);
     };
 
+    Bonejs.prototype.draw = function() {};
+
     Bonejs.prototype.fillRect = function(rectArray, color) {
       var _ref;
       this._painter.fillStyle = color;
@@ -76,6 +80,7 @@
     };
 
     Bonejs.prototype.append = function(obj) {
+      obj._setPainter(this._painter);
       return this.children.push(obj);
     };
 
@@ -96,13 +101,41 @@
 
   })();
 
+  extend = function(options) {
+    var key, value;
+    for (key in options) {
+      value = options[key];
+      this[key] = value;
+    }
+    return this;
+  };
+
   Obj = (function() {
     function Obj(options) {
+      var _ref, _ref1;
+      options || (options = {});
+      this.x = (_ref = options.x) != null ? _ref : 0;
+      this.y = (_ref1 = options.y) != null ? _ref1 : 0;
+      this.initialize.apply(this, arguments);
+    }
+
+    Obj.prototype._setPainter = function(painter) {
+      return this.painter = painter;
+    };
+
+    return Obj;
+
+  })();
+
+  Bonejs.Object = (function(_super) {
+    __extends(Object, _super);
+
+    function Object(options) {
       this.extend = __bind(this.extend, this);
       this;
     }
 
-    Obj.prototype.extend = function(options) {
+    Object.prototype.extend = function(options) {
       var key, value;
       for (key in options) {
         value = options[key];
@@ -111,13 +144,13 @@
       return this;
     };
 
-    Obj.prototype.keyframe = function() {};
+    Object.prototype.keyframe = function() {};
 
-    return Obj;
+    return Object;
 
-  })();
+  })(Obj);
 
-  Bonejs.Object = new Obj();
+  Bonejs.Object.extend = extend;
 
   window.$bone = Bonejs;
 

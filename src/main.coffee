@@ -38,31 +38,50 @@ class Bonejs
         window.addEventListener 'resize', @_autoResize
     _clear: ->
         @fillRect [0, 0, @getWidth(), @getHeight()], @_background
+    draw: ->
+
     fillRect: (rectArray, color) ->
         @_painter.fillStyle = color
         @_painter.fillRect rectArray...
     append: (obj)->
+        obj._setPainter @_painter
         @children.push obj
     runKeyframes: =>
         @_clear()
         for child in @children
             #console.log child
-            #keyframe.call child
             child.keyframe()
             requestAnimationFrame @runKeyframes
 
 
+extend = (options) ->
+    for key, value of options
+        @[key] = value
+    @
+
 class Obj
+
+    constructor: (options) ->
+        options || (options = {})
+        @x = options.x ? 0
+        @y = options.y ? 0
+        @initialize.apply @, arguments
+    _setPainter: (painter) ->
+        @painter = painter
+
+
+class Bonejs.Object extends Obj
+
     constructor: (options) -> @
-        #@extend options
-        #Bonejs.append @
+
     extend: (options) =>
         for key, value of options
             @[key] = value
         @
     keyframe: ->
 
-Bonejs.Object = new Obj()
+Bonejs.Object.extend = extend
+
 
 
 
