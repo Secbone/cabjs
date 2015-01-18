@@ -44,7 +44,7 @@ class Bonejs
         @_painter.fillStyle = color
         @_painter.fillRect rectArray...
     append: (obj)->
-        obj._setPainter @_painter
+        obj._setCanvas @
         @children.push obj
     runKeyframes: =>
         @_clear()
@@ -69,6 +69,9 @@ class Obj
     _setPainter: (painter) ->
         @painter = painter
 
+    _setCanvas: (parent) ->
+        @_parent = parent
+
 
 class Bonejs.Object extends Obj
 
@@ -79,6 +82,14 @@ class Bonejs.Object extends Obj
             @[key] = value
         @
     keyframe: ->
+
+class Bonejs.Mouse extends Obj
+    constructor: (options) -> @
+
+    getMousePosition: ->
+
+
+
 
 Bonejs.Object.extend = extend
 

@@ -80,7 +80,7 @@
     };
 
     Bonejs.prototype.append = function(obj) {
-      obj._setPainter(this._painter);
+      obj._setCanvas(this);
       return this.children.push(obj);
     };
 
@@ -123,6 +123,10 @@
       return this.painter = painter;
     };
 
+    Obj.prototype._setCanvas = function(parent) {
+      return this._parent = parent;
+    };
+
     return Obj;
 
   })();
@@ -147,6 +151,19 @@
     Object.prototype.keyframe = function() {};
 
     return Object;
+
+  })(Obj);
+
+  Bonejs.Mouse = (function(_super) {
+    __extends(Mouse, _super);
+
+    function Mouse(options) {
+      this;
+    }
+
+    Mouse.prototype.getMousePosition = function() {};
+
+    return Mouse;
 
   })(Obj);
 
