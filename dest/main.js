@@ -161,7 +161,9 @@
       this;
     }
 
-    Mouse.prototype.getMousePosition = function() {};
+    Mouse.prototype.getMousePosition = function() {
+      return this;
+    };
 
     return Mouse;
 
