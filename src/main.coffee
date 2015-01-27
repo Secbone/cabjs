@@ -91,7 +91,7 @@ class Bonejs.Mouse extends Obj
 
 
 
-Bonejs.Object.extend = extend
+Bonejs.Object.extend ＝ Bonejs.Mouse.extend = extend
 
 
 

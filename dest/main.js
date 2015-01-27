@@ -169,7 +169,7 @@
 
   })(Obj);
 
-  Bonejs.Object.extend = extend;
+  Bonejs.Object.extend(＝(Bonejs.Mouse.extend = extend));
 
   window.$bone = Bonejs;
 
