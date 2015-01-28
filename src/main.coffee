@@ -84,9 +84,11 @@ class Bonejs.Object extends Obj
     keyframe: ->
 
 class Bonejs.Mouse extends Obj
-    constructor: (options) -> @
+    constructor: (options) ->
+        @x = @y = 0
 
     getMousePosition: -> @
+
 
 
 

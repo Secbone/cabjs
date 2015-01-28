@@ -158,7 +158,7 @@
     __extends(Mouse, _super);
 
     function Mouse(options) {
-      this;
+      this.x = this.y = 0;
     }
 
     Mouse.prototype.getMousePosition = function() {
