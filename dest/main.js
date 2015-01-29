@@ -162,7 +162,10 @@
     }
 
     Mouse.prototype.getMousePosition = function() {
-      return this;
+      return {
+        x: this.x,
+        y: this.y
+      };
     };
 
     return Mouse;

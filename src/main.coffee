@@ -87,7 +87,8 @@ class Bonejs.Mouse extends Obj
     constructor: (options) ->
         @x = @y = 0
 
-    getMousePosition: -> @
+    getMousePosition: ->
+        {x: @x, y: @y}
 
 
 
