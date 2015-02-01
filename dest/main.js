@@ -159,7 +159,6 @@
 
     function Mouse(options) {
       this.x = this.y = 0;
-      this;
     }
 
     Mouse.prototype.getMousePosition = function() {
