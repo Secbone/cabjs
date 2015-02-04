@@ -169,6 +169,8 @@
       };
     };
 
+    Mouse.prototype._bindEvent = function() {};
+
     return Mouse;
 
   })(Obj);
