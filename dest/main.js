@@ -169,9 +169,7 @@
       };
     };
 
-    Mouse.prototype._bindEvent = function() {
-      return this;
-    };
+    Mouse.prototype._bindEvent = function() {};
 
     return Mouse;
 
