@@ -91,7 +91,7 @@ class Bonejs.Mouse extends Obj
     getMousePosition: ->
         {x: @x, y: @y}
 
-    _bindEvent: -> 
+    _bindEvent: -> @
 
 
 
