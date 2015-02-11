@@ -159,6 +159,7 @@
 
     function Mouse(options) {
       this.x = this.y = 0;
+      this._bindEvent();
       this;
     }
 
