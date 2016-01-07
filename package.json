@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Secbone/bonejs.git"
+    "url": "git+https://github.com/Secbone/bonejs.git"
   },
   "author": "Secbone",
   "license": "ISC",
@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/Secbone/bonejs",
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-coffee": "^2.2.0",
-    "gulp-concat": "^2.4.1",
-    "gulp-jshint": "^1.9.0",
+    "babel-preset-es2015": "^6.3.13",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-coffee": "^2.3.1",
     "gulp-load-plugins": "^0.7.1"
+  },
+  "directories": {
+    "example": "example"
   }
 }
