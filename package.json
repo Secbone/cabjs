@@ -1,29 +1,29 @@
 {
-  "name": "bonejs",
-  "version": "1.0.0",
-  "description": "bonejs ======",
-  "main": "index.js",
+  "name": "cabjs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/main.js",
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Secbone/bonejs.git"
+    "url": "git+https://github.com/Secbone/cabjs.git"
   },
   "author": "Secbone",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Secbone/bonejs/issues"
+    "url": "https://github.com/Secbone/cabjs/issues"
   },
-  "homepage": "https://github.com/Secbone/bonejs",
+  "homepage": "https://github.com/Secbone/cabjs#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-coffee": "^2.3.1",
-    "gulp-load-plugins": "^0.7.1"
-  },
-  "directories": {
-    "example": "example"
+    "gulp-load-plugins": "^1.2.0"
   }
 }
