@@ -1,4 +1,4 @@
-let BoneJS = {
+let CabJS = {
     _components: [],
     start: function() {
         requestAnimationFrame(this.runKeyframes);
@@ -11,9 +11,9 @@ let BoneJS = {
     }
 };
 
-class Component {
+class CabClass {
     constructor() {
-        BoneJS._components.push(this);
+        CabJS._components.push(this);
     }
 
     keyframe() {
@@ -21,4 +21,4 @@ class Component {
     }
 }
 
-module.exports = BoneJS;
+module.exports = CabJS;

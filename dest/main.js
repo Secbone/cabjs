@@ -4,7 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var BoneJS = {
+var CabJS = {
     _components: [],
     start: function start() {
         requestAnimationFrame(this.runKeyframes);
@@ -17,19 +17,19 @@ var BoneJS = {
     }
 };
 
-var Component = function () {
-    function Component() {
-        _classCallCheck(this, Component);
+var CabClass = function () {
+    function CabClass() {
+        _classCallCheck(this, CabClass);
 
-        BoneJS._components.push(this);
+        CabJS._components.push(this);
     }
 
-    _createClass(Component, [{
+    _createClass(CabClass, [{
         key: "keyframe",
         value: function keyframe() {}
     }]);
 
-    return Component;
+    return CabClass;
 }();
 
-module.exports = BoneJS;
+module.exports = CabJS;
