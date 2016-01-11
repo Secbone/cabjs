@@ -12,6 +12,10 @@ window.CabJS = _Cab2.default;
 },{"./src/Cab.js":2}],2:[function(require,module,exports){
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _CabContext = require("./CabContext.js");
 
 var _CabContext2 = _interopRequireDefault(_CabContext);
@@ -58,7 +62,7 @@ CabJS = Object.assign({
     RectClass: _CabRectClass2.default
 }, CabJS);
 
-module.exports = CabJS;
+exports.default = CabJS;
 
 },{"./CabClass.js":3,"./CabClassQueue.js":5,"./CabContext.js":6,"./CabRectClass.js":7}],3:[function(require,module,exports){
 "use strict";

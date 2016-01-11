@@ -31,4 +31,4 @@ CabJS = Object.assign({
     RectClass: CabRectClass,
 }, CabJS);
 
-module.exports = CabJS;
+export default CabJS;
