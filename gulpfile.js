@@ -1,7 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
+let gulp = require('gulp');
+let source = require("vinyl-source-stream");
+let plugins = require('gulp-load-plugins')();
+let babelify = require("babelify");
+let browserify = require("browserify");
 
 gulp.task('coffee', () =>{
     return gulp.src('src/**/*.coffee')
@@ -10,11 +13,22 @@ gulp.task('coffee', () =>{
 });
 
 gulp.task('babel', () => {
-    return gulp.src("src/**/*.js")
+    /*return gulp.src("src/Cab.js")
         .pipe(plugins.babel({
             presets: ["es2015"]
         }))
-        .pipe(gulp.dest("dest"));
+        .pipe(plugins.browserify({
+            standalone: true,
+            transform:
+        }))
+        .pipe(gulp.dest("dest"));*/
+    return browserify({
+        entries: "cab.js",
+    }).transform(babelify, {
+        presets: ["es2015"]
+    }).bundle()
+    .pipe(source("Cab.js"))
+    .pipe(gulp.dest("dest"));
 });
 
 gulp.task('watch', () => {

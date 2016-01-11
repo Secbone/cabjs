@@ -24,26 +24,20 @@
 
     <script src="js/index.js"></script>
     -->
-    <script src="../dest/main.js"></script>
+    <script src="../dest/Cab.js"></script>
     <script>
-        var b = new $bone("#mycanvas");
-        b.setBackground("#000");
-
-        //console.log($bone.Object.extend);
-
-        var obj = new $bone.Object.extend({
-            keyframe: function(){
-                //console.log(Math.random());
+        var ret = CabJS.RectClass.extend({
+            x: 0,
+            y: 0,
+            width: 20,
+            height: 100,
+            color: "#000",
+            keyframe: function() {
+                this.x += 1;
+                this.y += 0.5;
             }
         });
-
-        var mouse = new $bone.Mouse.extend();
-
-        console.log(obj);
-
-        b.append(obj);
-
-        b.start();
+        CabJS.start("mycanvas");
 
     </script>
 </body>
