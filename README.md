@@ -1,6 +1,8 @@
 # Cabjs
 
+[![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
+[![Downloads][downloads-image]][downloads-url]
 
 A framework to draw canvas with Babel
 
@@ -25,5 +27,9 @@ CabJS.start("mycanvas");
 
 MIT
 
+[npm-image]: https://img.shields.io/npm/v/cabjs.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/cabjs
+[downloads-image]: http://img.shields.io/npm/dm/cabjs.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/cabjs
 [travis-image]: https://travis-ci.org/Secbone/cabjs.svg?branch=master
 [travis-url]: https://travis-ci.org/Secbone/cabjs
