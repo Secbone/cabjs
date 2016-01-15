@@ -1,5 +1,7 @@
 # Cabjs
 
+[![Build Status][travis-image]][travis-url]
+
 A framework to draw canvas with Babel
 
 ## Usage
@@ -18,3 +20,10 @@ var ret = CabJS.RectClass.extend({
 });
 CabJS.start("mycanvas");
 ```
+
+## License
+
+MIT
+
+[travis-image]: https://travis-ci.org/Secbone/cabjs.svg?branch=master
+[travis-url]: https://travis-ci.org/Secbone/cabjs
