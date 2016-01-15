@@ -31,5 +31,5 @@ MIT
 [npm-url]: https://npmjs.org/package/cabjs
 [downloads-image]: http://img.shields.io/npm/dm/cabjs.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/cabjs
-[travis-image]: https://travis-ci.org/Secbone/cabjs.svg?branch=master
+[travis-image]: https://img.shields.io/travis/Secbone/cabjs.svg?style=flat-square
 [travis-url]: https://travis-ci.org/Secbone/cabjs
