@@ -1,8 +1,5 @@
 # Cabjs
 
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][downloads-url]
-
 A framework to draw canvas with Babel
 
 ## Usage

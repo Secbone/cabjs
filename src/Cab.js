@@ -17,13 +17,18 @@ let CabJS = {
         this.ctx.fillStyle = "#fff";
         this.ctx.fillRect(0, 0, this._context.width, this._context.height);
     },
+    preframe: function(callback) {
+        this._pre_frame = callback;
+    },
     runKeyframes: function() {
+        if(this._pre_frame)
+            this._pre_frame.call(this);
         this.clear();
         this._components.forEach(item => {
             item.render();
         });
         requestAnimationFrame(this.runKeyframes.bind(this));
-    }
+    },
 };
 
 CabJS = Object.assign({

@@ -1,13 +1,13 @@
 {
   "name": "cabjs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "src/Cab.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "gulp-babel": "^6.1.1",
     "gulp-coffee": "^2.3.1",
     "gulp-load-plugins": "^1.2.0",
+    "mocha": "^2.3.4",
     "vinyl-source-stream": "^1.1.0"
   }
 }
