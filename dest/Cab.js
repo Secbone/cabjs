@@ -35,6 +35,7 @@ var _CabRectClass2 = _interopRequireDefault(_CabRectClass);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CabJS = {
+    _pre_frame: new Array(),
     _components: _CabClassQueue2.default,
     setOptions: function setOptions(options) {
         this._context = _CabContext2.default.init(options);
@@ -49,10 +50,17 @@ var CabJS = {
         this.ctx.fillRect(0, 0, this._context.width, this._context.height);
     },
     preframe: function preframe(callback) {
-        this._pre_frame = callback;
+        this._pre_frame.push(callback);
     },
     runKeyframes: function runKeyframes() {
-        if (this._pre_frame) this._pre_frame.call(this);
+        var _this = this;
+
+        if (this._pre_frame.length) {
+            this._pre_frame.forEach(function (item) {
+                return item.call(_this);
+            });
+        }
+
         this.clear();
         this._components.forEach(function (item) {
             item.render();

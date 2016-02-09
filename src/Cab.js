@@ -4,6 +4,7 @@ import CabClass from "./CabClass.js";
 import CabRectClass from "./CabRectClass.js";
 
 let CabJS = {
+    _pre_frame: new Array(),
     _components: CabClassQueue,
     setOptions: function(options) {
         this._context = CabContext.init(options);
@@ -18,11 +19,13 @@ let CabJS = {
         this.ctx.fillRect(0, 0, this._context.width, this._context.height);
     },
     preframe: function(callback) {
-        this._pre_frame = callback;
+        this._pre_frame.push(callback);
     },
     runKeyframes: function() {
-        if(this._pre_frame)
-            this._pre_frame.call(this);
+        if(this._pre_frame.length){
+            this._pre_frame.forEach(item => item.call(this));
+        }
+
         this.clear();
         this._components.forEach(item => {
             item.render();
