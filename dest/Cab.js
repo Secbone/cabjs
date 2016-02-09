@@ -41,8 +41,8 @@ var CabJS = {
         this._context = _CabContext2.default.init(options);
         this.ctx = this._context.ctx;
     },
-    start: function start(id) {
-        this.setOptions(id);
+    start: function start(selector) {
+        this.setOptions(selector);
         this.runKeyframes();
     },
     clear: function clear() {
@@ -160,8 +160,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var CabContext = {
-    init: function init(id) {
-        this.el = document.getElementById(id);
+    init: function init(selector) {
+        if (typeof selector === "string") {
+            this.el = document.querySelector(selector);
+        } else if (selector.nodeType) {
+            this.el = selector;
+        }
+
         this.ctx = this.el.getContext("2d");
         this.width = this.el.width;
         this.height = this.el.height;

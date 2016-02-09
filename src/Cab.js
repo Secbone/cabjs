@@ -10,8 +10,8 @@ let CabJS = {
         this._context = CabContext.init(options);
         this.ctx = this._context.ctx;
     },
-    start: function(id) {
-        this.setOptions(id);
+    start: function(selector) {
+        this.setOptions(selector);
         this.runKeyframes();
     },
     clear: function() {
