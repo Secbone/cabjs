@@ -1,7 +1,7 @@
 {
   "name": "cabjs",
   "version": "0.0.8",
-  "description": "",
+  "description": "A framework to draw canvas with Babel",
   "main": "src/Cab.js",
   "directories": {
     "example": "example"
